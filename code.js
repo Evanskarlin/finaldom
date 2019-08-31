@@ -42,12 +42,19 @@ function timertimer(){
             if(level == 1){
                 clearInterval(timer)
                 if (score > 200){
-                    alert(`LEVEL : 1 \nWAKTU HABIS! \nSCORE : ${score} \nLANJUT LEVEL 2`)
+                    alert(`WAKTU HABIS! \nLEVEL : 1 \nSCORE : ${score} \nLANJUT LEVEL 2`)
                     t = 20
                     level = 2
                 }
                 else{
-                    alert(`LEVEL : 1 \nWAKTU HABIS! \nSCORE : ${score} \nBUTUH SCORE 200 UNTUK LANJUT LEVEL 2`)
+                    if (score > highscore){
+                        alert(`WAKTU HABIS! \nLEVEL : 1 \nSCORE : ${score} \nBUTUH SCORE 200 UNTUK LANJUT LEVEL 2 \nHIGHSCORE BARU`)
+                        highscore = score
+                        highdom.innerHTML = highscore
+                    }
+                    else{
+                        alert(`WAKTU HABIS! \nLEVEL : 1 \nSCORE : ${score} \nBUTUH SCORE 200 UNTUK LANJUT LEVEL 2`)
+                    }
                     clearInterval(timer)
                     t = 10
                     level = 1
@@ -58,12 +65,12 @@ function timertimer(){
             }
             else if (level == 2){
                 if (score > highscore){
-                    alert(`LEVEL : 2 \nWAKTU HABIS! \nSCORE : ${score} \nHIGHSCORE BARU`)
+                    alert(`WAKTU HABIS! \nLEVEL : 2 \nSCORE : ${score} \nHIGHSCORE BARU`)
                     highscore = score
                     highdom.innerHTML = highscore
                 }
                 else{
-                    alert(`LEVEL : 2 \nWAKTU HABIS! \nSCORE : ${score} \nCOBA LAGI KALAHKAN HIGHSCORE`)
+                    alert(`WAKTU HABIS! \nLEVEL : 2 \nSCORE : ${score} \nCOBA LAGI KALAHKAN HIGHSCORE`)
                 }
                 t = 10
                 level = 1
