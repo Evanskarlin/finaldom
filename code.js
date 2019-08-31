@@ -6,7 +6,7 @@ var score = 0
 
 var score1 = document.getElementById("score")
 
-var t = 10
+var t = 15
 
 var timerdom = document.getElementById("timer")
 
@@ -25,6 +25,8 @@ var highdom = document.getElementById("highscore")
 highdom.innerHTML = highscore
 
 var flag = true
+
+var pertama = 0
 
 var kamus = {
     'A':0,
@@ -45,6 +47,7 @@ function timertimer(){
                     alert(`WAKTU HABIS! \nLEVEL : 1 \nSCORE : ${score} \nLANJUT LEVEL 2`)
                     t = 20
                     level = 2
+                    leveldom.innerHTML = level
                 }
                 else{
                     if (score > highscore){
@@ -55,15 +58,11 @@ function timertimer(){
                     else{
                         alert(`WAKTU HABIS! \nLEVEL : 1 \nSCORE : ${score} \nBUTUH SCORE 200 UNTUK LANJUT LEVEL 2`)
                     }
-                    clearInterval(timer)
-                    t = 10
-                    level = 1
-                    score = 0
+                    reset()
                 }
-                score1.innerHTML = score
-                leveldom.innerHTML = level
             }
             else if (level == 2){
+                clearInterval(timer)
                 if (score > highscore){
                     alert(`WAKTU HABIS! \nLEVEL : 2 \nSCORE : ${score} \nHIGHSCORE BARU`)
                     highscore = score
@@ -72,11 +71,7 @@ function timertimer(){
                 else{
                     alert(`WAKTU HABIS! \nLEVEL : 2 \nSCORE : ${score} \nCOBA LAGI KALAHKAN HIGHSCORE`)
                 }
-                t = 10
-                level = 1
-                leveldom.innerHTML = level
-                score = 0
-                score1.innerHTML = score
+                reset()
             }
             flag = false
         }
@@ -85,8 +80,11 @@ function timertimer(){
         }
         timerdom.innerHTML = t
     }, 1000);
-    keyboard()
-    pindahgambar()
+    if(pertama == 0){
+        pertama++
+        keyboard()
+        pindahgambar()       
+    }
 }
 function pindahgambar(){
     if(level == 2){
@@ -145,4 +143,24 @@ function acakhuruf(arr){
 function huruf(index, huruf){
     var hurufdom = document.getElementById(index)
     hurufdom.innerHTML = huruf
+}
+function reset(){
+    t = 15
+    level = 1
+    leveldom.innerHTML = level
+    score = 0
+    score1.innerHTML = score
+    kamus = {
+        'A':0,
+        'S':1,
+        'D':2,
+        'J':3,
+        'K':4,
+        'L':5
+    }
+    var set = ['A', 'S', 'D', 'J', 'K', 'L']
+    for(var i = 0 ; i<set.length ; i++){
+        var hurufdom = document.getElementById(i)
+        hurufdom.innerHTML = set[i]
+    }
 }
