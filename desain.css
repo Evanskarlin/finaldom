@@ -1,0 +1,91 @@
+h1 {
+    text-align: center;
+    font-family: Lato;
+}
+h3 {
+    text-align: center;
+    font-family: Lato;
+}
+h5 {
+    font-family: Lato;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+}
+h6{
+    font-family: Lato;
+    text-align: center;
+    color: red;
+}
+.head{
+    margin-top: 3%;
+}
+body{
+    background-image: url("background.gif");
+}
+#tengah{
+    border: 1px solid transparent;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    margin-top: 5%;
+    background-image: url("pink.gif");
+    background-size: cover;
+    margin-bottom: 6%;
+}
+#rainbow{
+    background-image: url("rainbow.gif");
+    background-size: 8%;
+}
+.container {
+    display: flex;
+    /* flex-wrap: wrap; untuk kebawah*/
+    margin: auto;
+    height: 50%;
+    width: 80%;
+    border: 1px solid transparent;
+    margin-top: 3%;
+}
+.waktu {
+    display: flex;
+    /* flex-wrap: wrap; untuk kebawah*/
+    margin: auto;
+    height: 50%;
+    width: 70%;
+    border: 1px solid transparent;
+}
+.tabwaktu {
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 16%;
+}
+button{
+    margin-top: 25%;
+}
+img {
+    width: 80%;
+}
+.tab {
+    text-align: center;
+    width: 16%;
+}
+.tab1 {
+    text-align: center;
+    width: 16%;
+}
+.container1 {
+    display: flex;
+    /* flex-wrap: wrap; untuk kebawah*/
+    margin: auto;
+    height: 50%;
+    width: 80%;
+    border: 1px solid transparent;
+}
+.tab2 {
+    text-align: center;
+    width: 33%;
+    margin: auto;
+}
